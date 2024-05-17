@@ -4,6 +4,7 @@ import (
 	"github.com/enbility/cemd/api"
 	"github.com/enbility/cemd/util"
 	eebusapi "github.com/enbility/eebus-go/api"
+	"github.com/enbility/eebus-go/features"
 	eebusutil "github.com/enbility/eebus-go/util"
 	spineapi "github.com/enbility/spine-go/api"
 	"github.com/enbility/spine-go/model"
@@ -16,6 +17,8 @@ type UCLPPServer struct {
 	eventCB api.EntityEventCallback
 
 	validEntityTypes []model.EntityTypeType
+
+	heartbeatDiag *features.DeviceDiagnosis
 
 	heartbeatKeoWorkaround bool // required because KEO Stack uses multiple identical entities for the same functionality, and it is not clear which to use
 }
